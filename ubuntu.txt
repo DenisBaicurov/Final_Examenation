@@ -1,0 +1,77 @@
+
+1.
+sudo su
+
+cd
+
+mkdir final_examenation
+cd final_examenation
+
+
+cat > pets
+cats
+dogs
+hamster
+
+cat > pack_animals
+horses
+camels
+donkeys
+
+cat pets pack_animals > human_friends
+nano human_friends
+2.
+mkdir  friends
+mv human_friends friends
+ ls -l
+cd friends
+ls -l
+
+exit
+
+3. sudo apt install mysql-server
+   sudo apt install mysql-qlient
+   
+   
+4.    cd  Загрузки
+vivaldi-stable_6.0.2979.15-1_amd64.deb 
+dpkg -i vivaldi-stable_6.0.2979.15-1_amd64.deb 
+dpkg --list vivaldi-stable_6.0.2979.15-1_amd64.deb 
+dpkg -r vivaldi-stable_6.0.2979.15-1_amd64.deb 
+dpkg -P vivaldi-stable_6.0.2979.15-1_amd64.deb 
+
+
+sudo dpkg -i vivaldi-stable_5.7.2921.65-1_amd64.deb
+dpkg --list 'vivaldi*'
+sudo dpkg -r vivaldi-stable 
+
+
+
+7.sudo mysqladmin password -u root -p
+mysql -u root -p
+create database human_friends ;
+use human_friends ;
+
+8.
+create table animals (Id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), command VARCHAR(20), birthdate DATE,type_id INT NOT NULL);
+create table category (Id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20));
+create table types (Id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), aminal_id INT NOT NULL);
+
+
+9.
+insert into category(name) VALUES ('pets'), ('pack_animals');
+insert into types(name, aminal_id) VALUES ('dog', 1),('cat', 1),('hamster', 1),('horse', 2),('camel', 2),('donkey', 2);
+insert into animals(name, command,birthdate, type_id) VALUES ('Bob', 'run','2020-01-01',1),('Murka','eat','2015-02-02', 2),('Senya','sleep','2021-03-01', 3),('Flash', 'rest', '2010-10-11',4),('Sahara','drink','2020-12-12', 5),('Yasha', 'drink','2019-04-05', 6);
+
+
+10.
+delete from animals where type_id=5;
+update animals set id=5,type_id=5 where name='Yasha';
+
+
+11.
+create table young_animals select a.id, a.name, a.command, a.birthdate, year(curdate())-year(birthdate) as age from animals a where year(curdate())-year(birthdate) between 1 and 3;
+
+12.
+create table summary select a.id, a.name, a.command, a.birthdate, t.name as 'animals_type', c.name as 'animals_category' from animals as a join types as t on a.type_id=t.id left join category as c on t.aminal_id=c.id;
+
