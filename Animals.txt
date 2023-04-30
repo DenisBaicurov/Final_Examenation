@@ -1,0 +1,5 @@
+  
+собака  Muhtar  Fas  Fuu  Tue Feb 02 18:10:40 GMT+04:00 2021  
+кошка  Murka  Mouse  Miay  Mon Aug 21 18:12:09 GMT+04:00 2017  
+лошадь  Veter  Start  Stop  Tue Jun 30 18:14:01 GMT+04:00 2020  
+верблюд  Sahara  Go  Stop  Sun Nov 15 18:15:01 GMT+04:00 2015  
